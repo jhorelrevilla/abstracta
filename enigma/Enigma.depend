@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1536416041 source:c:\users\jhorel\desktop\enigma\main.cpp
+	<string.h>
+	<iostream>
+	"Enigma.h"
+
+1536415178 c:\users\jhorel\desktop\enigma\include\enigma.h
+	<string.h>
+	<iostream>
+
+1536416063 source:c:\users\jhorel\desktop\enigma\src\enigma.cpp
+	"Enigma.h"
+
