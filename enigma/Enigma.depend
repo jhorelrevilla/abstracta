@@ -11,3 +11,15 @@
 1536416063 source:c:\users\jhorel\desktop\enigma\src\enigma.cpp
 	"Enigma.h"
 
+1537019264 source:c:\users\jhorel\documents\abstracta\enigma\main.cpp
+	<string.h>
+	<iostream>
+	"Enigma.h"
+
+1537018069 c:\users\jhorel\documents\abstracta\enigma\include\enigma.h
+	<string.h>
+	<iostream>
+
+1537019162 source:c:\users\jhorel\documents\abstracta\enigma\src\enigma.cpp
+	"Enigma.h"
+
