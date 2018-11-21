@@ -59,33 +59,32 @@ var HomePage = /** @class */ (function () {
         this.message = "";
         this.keepConversation = [];
         this.greetAnswers = [];
+        this.conversaciones = [
+            { quien: 'Pedrito', mensaje: 'Hola' },
+            { quien: 'Juanita', mensaje: 'Hey que tal!' },
+            { quien: 'Pedrito', mensaje: 'Bien y tu?' },
+            { quien: 'Juanita', mensaje: 'Ya me tengo que ir chau' }
+        ];
         this.initGreetAnswers();
         this.initKeepConversation();
     }
     HomePage.prototype.initKeepConversation = function () {
-        this.keepConversation.push("Si me parece bien");
-        this.keepConversation.push("Aja!");
-        this.keepConversation.push("De verdad?");
-        this.keepConversation.push("Si me parece bien");
+        this.keepConversation.push("hola");
     };
     HomePage.prototype.initGreetAnswers = function () {
         this.greetAnswers.push("habla!");
-        this.greetAnswers.push("bien y tu?");
-        this.greetAnswers.push("hola");
     };
     HomePage.prototype.sendMessage = function () {
-        if (this.message.indexOf("hola") != -1)
-            this.answer = this.greetAnswers[Math.floor(Math.random() * 5)];
-        else
-            this.answer = this.keepConversation[Math.floor(Math.random() * 5)];
+        this.conversaciones.push({ quien: 'Pedrito', mensaje: this.message });
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Alumno-G\mijo\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Chateando\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-card>\n	<ion-card-header>\n		Lucía dice:\n	</ion-card-header>\n	<ion-card-content>\n		{{answer}}\n	</ion-card-content>\n  </ion-card>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-input placeholder="Mensaje" [(ngModel)]="message"></ion-input>\n	<ion-buttons end>\n	<button ion-button icon-end (click)="sendMessage()">\n	  Enviar\n	  <ion-icon name="send"></ion-icon>\n	</button>\n	</ion-buttons>\n	\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\Users\Alumno-G\mijo\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Alumno-G\mijo\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Chat\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-item *ngFor="let conversacion of conversaciones">\n		 <ion-card-header>\n			{{conversacion.quien}} dice:\n		</ion-card-header>\n		<ion-card-content>\n			{{conversacion.mensaje}}\n		</ion-card-content>\n    </ion-item>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-input placeholder="Mensaje" [(ngModel)]="message"  ></ion-input>\n	<ion-buttons end>\n	<button ion-button icon-end (click)="this.sendMessage()">\n	  Enviar\n	  <ion-icon name="send"></ion-icon>\n	</button>\n	</ion-buttons>\n	\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\Users\Alumno-G\mijo\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object])
     ], HomePage);
     return HomePage;
+    var _a;
 }());
 
 //# sourceMappingURL=home.js.map

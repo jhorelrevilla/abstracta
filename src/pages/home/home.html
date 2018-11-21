@@ -1,27 +1,27 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Chateando
+      Chat
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
-	<ion-card-header>
-		Lucía dice:
-	</ion-card-header>
-	<ion-card-content>
-		{{answer}}
-	</ion-card-content>
-  </ion-card>
+    <ion-item *ngFor="let conversacion of conversaciones">
+		 <ion-card-header>
+			{{conversacion.quien}} dice:
+		</ion-card-header>
+		<ion-card-content>
+			{{conversacion.mensaje}}
+		</ion-card-content>
+    </ion-item>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-input placeholder="Mensaje" [(ngModel)]="message"></ion-input>
+    <ion-input placeholder="Mensaje" [(ngModel)]="message"  ></ion-input>
 	<ion-buttons end>
-	<button ion-button icon-end (click)="sendMessage()">
+	<button ion-button icon-end (click)="this.sendMessage()">
 	  Enviar
 	  <ion-icon name="send"></ion-icon>
 	</button>

@@ -12,30 +12,26 @@ export class HomePage {
   keepConversation = [];
   greetAnswers = [];
   
+  conversaciones: Array<any> = [
+						{quien: 'Pedrito', mensaje: 'Hola'},
+						{quien: 'Juanita', mensaje: 'Hey que tal!'},
+						{quien: 'Pedrito', mensaje: 'Bien y tu?'},
+						{quien: 'Juanita', mensaje: 'Ya me tengo que ir chau'}];
   constructor(public navCtrl: NavController) {
 	  this.initGreetAnswers();
 	  this.initKeepConversation();
   }
   
   public initKeepConversation(){
-	  this.keepConversation.push("Si me parece bien");
-	  this.keepConversation.push("Aja!");
-	  this.keepConversation.push("De verdad?");
-	  this.keepConversation.push("Si me parece bien");
+	  this.keepConversation.push("hola");
   }
-  
   public initGreetAnswers(){
 	  this.greetAnswers.push("habla!");
-	  this.greetAnswers.push("bien y tu?");
-	  this.greetAnswers.push("hola");
   }
  
   public sendMessage()
   {
-	if(this.message.indexOf("hola") != -1)
-		this.answer = this.greetAnswers[Math.floor(Math.random() * 5)];
-	else 
-		this.answer = this.keepConversation[Math.floor(Math.random() * 5)];
+	this.conversaciones.push({quien: 'Pedrito', mensaje: this.message});
   }
   
 
