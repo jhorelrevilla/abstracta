@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Chateando
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+	<ion-card-header>
+		Lucía dice:
+	</ion-card-header>
+	<ion-card-content>
+		{{answer}}
+	</ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-input placeholder="Mensaje" [(ngModel)]="message"></ion-input>
+	<ion-buttons end>
+	<button ion-button icon-end (click)="sendMessage()">
+	  Enviar
+	  <ion-icon name="send"></ion-icon>
+	</button>
+	</ion-buttons>
+	
+  </ion-toolbar>
+</ion-footer>
